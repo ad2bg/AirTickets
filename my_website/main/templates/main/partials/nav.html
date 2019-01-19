@@ -1,0 +1,60 @@
+<nav class="navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark">
+    {#Left#}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/api">API</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/schema/">Schema</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/swagger/">Swagger</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main-home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'main-about' %}">About</a>
+            </li>
+        </ul>
+    </div>
+
+    {#Center#}
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="#!">{{ my_website_name }}</a>
+    </div>
+
+    {#Right#}
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users-profile' %}">Hi, {{ user.email }}!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users-logout' %}">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users-login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users-register' %}">Register</a>
+                </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/">Administration</a>
+            </li>
+        </ul>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+
