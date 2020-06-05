@@ -3,7 +3,7 @@ chardet==3.0.4
 colorama==0.4.0
 coreapi==2.3.3
 coreschema==0.0.4
-Django==1.11.16
+Django==1.11.29
 django-crispy-forms==1.7.2
 django-grappelli==2.10.2
 django-rest-action-permissions==1.0.0
